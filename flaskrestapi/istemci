@@ -1,0 +1,16 @@
+import requests
+
+# Flask sunucusunun URL'si
+url = 'http://127.0.0.1:5000'
+
+# Yeni kullanıcı oluşturma
+response = requests.post(f"{url}/kullanici", json={"id": 1, "ad": "Alice"})
+print(response.json())
+
+# ID'ye göre kullanıcı getirme
+response = requests.get(f"{url}/kullanici/1")
+print(response.json())
+
+# Tüm kullanıcıları getirme
+response = requests.get(f"{url}/kullanicilar")
+print(response.json())
